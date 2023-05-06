@@ -1,0 +1,516 @@
+/*Configuração de stylo para o body*/
+body {
+  font-family: "Roboto", sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 250%;
+  color: #3C368C;
+  text-align: center;
+}
+
+/* Configuração de stylo para o header*/
+header  {
+  background-color: #f5f5f5;
+  height: 80px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#header-logotipo  {
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+
+header .header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-icone {
+  padding-right: 20px;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+}
+
+.header-nav {
+  display: inline;
+}
+
+.header-nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: #a4a3a3
+}
+
+.header-nav a:hover {
+  color: #0075be;
+}
+
+nav #header-menu-nav {
+  list-style: none;
+  margin: 0;
+  padding-left: 40px; 
+  padding-right: 40px;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .header-menu-option{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*Configuração css para o banner*/
+#banner {
+  background-image: url(/imagens/fundoBanner.jpg);
+  height: 500px;
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+}
+
+#banner-article {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+  left: 80px;
+  position: absolute;
+  top: 80px;
+}
+
+#banner-article p:first-of-type {
+  color: #ffffff;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+#banner-article p:nth-of-type(2) {
+  color: #ccc;
+  font-size: 30px;
+}
+
+#banner-article p:last-of-type {
+  color: #ffffff;
+  font-size: 20px;
+  font-style: italic;
+}
+
+#banner-article-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 150px;
+}
+
+#banner img {
+  position: absolute;
+  bottom: -40px;
+  right: 40px;
+}
+
+.button {
+  border-radius: 50px;
+  color: #f5f5f5;
+  cursor: pointer;
+  background-color: #f16248;
+  font-weight: 800;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.button:hover {
+  color: #252525;
+  background-color: #c8c8c8;
+}
+
+/*Configuração css section missão*/
+
+.container-mission {
+  display: flex;
+  align-items: flex-start;
+}
+
+#title-mission {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#subtitle-mission {
+  color: #252525;
+  font-weight: bold;
+}
+
+#imagem-mission{
+  padding-left: 30px;
+}
+
+#mission-text {
+  margin-left: 70px;
+  margin-right: 70px;
+  /* margin-top: 50px; */
+  /* margin-bottom: 50px; */
+  text-align: justify;
+  line-height: 1.5;
+  color: #7d7d7d;
+}
+
+#link-institucional{
+  display: flex;
+  align-items: flex-start;
+  padding-left: 380px;
+}
+
+#link-pdf {
+  color: #0075be; /* cor do link */
+  font-size: 1.2em; /* tamanho de letra 1.2 vezes superior ao tamanho standard */
+  font-weight: bold; /* texto em negrito */
+  text-decoration: none;
+}
+#link-pdf:hover {
+  text-decoration: underline;
+}
+
+#linha-mission {
+  padding-top: 50px;
+  border-bottom: 2px solid #7d7d7d;
+}
+
+/*Configuração css section equipe*/
+
+#team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 2px solid #7d7d7d;
+}
+
+#title-team {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center;
+  align-items: center; */
+  height: 10vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#image-team img{
+  margin-right: 30px;
+  border-radius: 50%;
+  
+}
+
+#image-team img:las-child{
+  margin-right: 0;
+}
+
+#linha-team {
+  padding-top: 50px;
+  border-bottom: 2px solid #7d7d7d;
+}
+
+.pessoa {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.pessoa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.pessoa:hover img {
+  transform: scale(1.1);
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pessoa:hover .info {
+  transform: translateY(0);
+}
+
+.nome {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.funcao {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/*Configuração css section oferta*/
+
+#title-training-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+#slider {
+  background-image: url(/imagens/slider.jpg);
+  height: 600px; 
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#slider-article {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+  left: 580px;
+  position: absolute;
+  top: 200px;  
+}
+
+#slider-article p:first-of-type {
+  color: #f27d29;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+
+#slider-article p:nth-of-type(2) {
+  color: #153c85;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#slider-article p:last-of-type {
+  color: #153c85;
+  font-size: 26px;
+  font-style: italic;  
+  text-align: center;
+
+}
+
+#slider-article-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 150px;
+}
+
+#title-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+#subtitle-slider {
+  padding-bottom: 30px;
+}
+
+#linha-training-offer {
+  padding-top: 50px;
+  border-bottom: 2px solid #7d7d7d;
+}
+
+/*Configurando css para o footer*/
+/* #title-footer {
+  display: flex;
+  align-items: left;
+  color: #f27d29;
+  font-weight: bold;
+  font-size: 42px;
+} */
+
+#footer {
+  background-color : #ebebeb; 
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+table {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+footer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+footer table th {
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+footer td a {
+  text-decoration: none;
+  color: #7d7d7d;
+}
+
+footer td a:hover {
+  text-decoration: underline;
+}
+
+td {
+  padding-bottom: 10px;
+}
+
+.title-table {
+  font-weight: bold;
+  color: #252525;
+}
+
+/*Configurando o telefone no lado direito da patgina */
+
+.telefone-container {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 9999; /* Valor alto para garantir sobreposição */
+}
+
+.telefone-box {
+  display: flex;
+  align-items: center;
+  background-color: #252525;
+  padding: 5px;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+  width: 30px;
+  overflow: hidden;
+}
+
+.telefone-box:hover {
+  width: 150px;
+}
+
+.telefone-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.telefone-texto {
+  color: #0acb84;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.telefone-box:hover .telefone-texto {
+  opacity: 1;
+}
+
+/*Configurando imagem seta para cima*/
+.seta-div {
+  /* position: fixed; */
+  bottom: 0;
+  right: 0;
+  padding-left: 1330px;
+  z-index: 9999;
+}
+
+.seta-link {
+  display: block;
+  cursor: pointer;
+}
+
+.seta-img {
+  width: 30px;
+  height: 30px;
+}
+
+/*RESPONSIVIDADE DA PAGINA*/
+
+/* Estilos para telas menores */
+@media screen and (max-width: 800px) {
+  header #header-menu-nav {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu-toggle i {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+
+/* Estilos para smartphones icone telefone */
+@media screen and (max-width: 767px) {
+  .telefone-container {
+    display: none;
+  }
+}
+
+/* Seta não aparecer para smartphones*/
+@media (min-width: 768px) {
+  .seta-div {
+    display: block;
+    /* position: fixed;  */
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+  }
+
+  .seta-link {
+    display: block;
+    cursor: pointer;
+  }
+
+  .seta-img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+
