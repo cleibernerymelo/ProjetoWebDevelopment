@@ -62,7 +62,7 @@ nav #header-menu-nav {
   display: flex;
   flex-grow: 1;
   justify-content: space-between;
-  align-items: center;
+   align-items: center; 
 }
 
 nav .header-menu-option{
@@ -70,9 +70,13 @@ nav .header-menu-option{
   font-size: 20px;
 }
 
+.header-menu-option {
+  align-items: center;
+}
+
 /*Configuração css para o banner*/
 #banner {
-  background-image: url(/imagens/fundoBanner.jpg);
+  background-image: url("../imagens/fundoBanner.jpg");
   height: 500px;
   position: relative;
   width: 100%;
@@ -288,7 +292,7 @@ nav .header-menu-option{
 }
 
 #slider {
-  background-image: url(/imagens/slider.jpg);
+  background-image: url("../imagens/slider.jpg");
   height: 600px; 
   position: relative;
   width: 100%;
