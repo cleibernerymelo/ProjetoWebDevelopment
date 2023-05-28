@@ -1,0 +1,27 @@
+{
+  "utilizadores": [
+    {
+      "id": 1,
+      "name": "Vitoria",
+      "email": "vitoria@mail.com",
+      "password": "v12345",
+      "address": "Av Herois de Angola, Leiria",
+      "postalCode": "2400-123",
+      "country": "PT",
+      "administrator": true,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Davi",
+      "email": "davi@mail.com",
+      "password": "d12345",
+      "address": "Av Herois de Angola, Leiria",
+      "postalCode": "2400-123",
+      "country": "PT",
+      "administrator": false,
+      "active": false
+    }
+  ]
+}
+

@@ -11,6 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Roboto"
     />
     <link rel="shortcut icon" type="image/x-icon" href="imagens/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>PRIMAVERA Business Software Solutions</title>
   </head>
   <body>
@@ -37,18 +44,43 @@
         src="imagens/menu.png"
         alt="imagem de um pequeno quadrado com três linhas para menu"
       />
-      <img
+      <!-- <img
         class="header-icone"
         title="Fazer login"
         src="imagens/login.png"
         alt="imagem de uma pessoa em um cirulo para login"
-      />
-      <img
+      /> -->
+      <!-- <img
         class="header-icone"
         title="Pesquisar"
         src="imagens/lupa.png"
         alt="imagem de uma lupa para pesquisa"
-      />
+      /> -->
+      <i
+        class="fa-solid fa-arrow-right-from-bracket fa-lg header-icone"
+        id="icone-logout"
+      ></i>
+      <i class="fa-solid fa-user fa-lg header-icone" id="icone-perfil"></i>
+      <i
+        id="login-icon"
+        class="fa-solid fa-arrow-right-to-bracket fa-lg header-icone"
+      ></i>
+      <i class="fa-solid fa-user-plus fa-lg header-icone" id="icone-record"></i>
+      <i
+        id="icone-pesquisa"
+        class="fa-solid fa-magnifying-glass fa-lg header-icone"
+        onclick="exibirInputPesquisa()"
+      >
+        <input
+          id="pesquisa"
+          type="text"
+          placeholder="Pesquisar"
+          onfocus="this.placeholder = ''"
+          onblur="this.placeholder = 'Pesquisar'"
+          style="display: inline-block; vertical-align: middle; display: none"
+        />
+      </i>
+
       <nav class="header-nav">
         <ul id="header-menu-nav">
           <li class="header-menu-option"><a href="#">Contabilistas</a></li>
@@ -59,6 +91,41 @@
           <li class="header-menu-option"><a href="#">Carreiras</a></li>
         </ul>
       </nav>
+
+      <!-- Modal de login -->
+      <div class="login-container">
+        <div id="login-modal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="fechar-modal-button">&times;</span>
+            <h4 id="title-login-form">Controlo de Acesso</h4>
+            <br />
+            <span id="mensagem"></span>
+            <span class="error-message" id="email-error"></span>
+            <span class="error-message" id="password-error"></span>
+            <br /><br />
+            <form id="login-form">
+              <label for="email">Email:</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              />
+
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" />
+              <br />
+              <button
+                id="btn-enter"
+                type="submit"
+                onclick="validarLogin(event)"
+              >
+                Validar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
       <section id="banner">
@@ -68,6 +135,7 @@
             <p id="subtitle">Conheça os casos de sucesso PRIMAVERA</p>
             <p>Na linha da frente na digitalização de empresas</p>
           </div>
+          <div></div>
           <a
             class="button"
             href="https://pt.primaverabss.com/pt/pagina/tecnologia-para-vencer/"
@@ -160,14 +228,10 @@
             </div>
           </article>
         </div>
-        <!-- <div id="linha-training-offer"></div> -->
       </section>
     </main>
     <footer>
       <br /><br />
-      <!-- <p id="title-footer">Footer</p> -->
-      <!-- <br /><br /> -->
-      <!-- <div></div> -->
       <section id="footer">
         <table>
           <tr>
@@ -241,23 +305,6 @@
       </section>
     </footer>
     <br /><br />
-    <script>
-      function exibirNumero() {
-        var telefoneTexto = document.getElementById('telefone-texto')
-        telefoneTexto.classList.remove('hidden')
-      }
-
-      function ocultarNumero() {
-        var telefoneTexto = document.getElementById('telefone-texto')
-        telefoneTexto.classList.add('hidden')
-      }
-
-      document
-        .querySelector('.seta-link')
-        .addEventListener('click', function (event) {
-          event.preventDefault()
-          window.scrollTo({ top: 0, behavior: 'smooth' })
-        })
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
