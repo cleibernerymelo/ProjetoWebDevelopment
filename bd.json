@@ -21,6 +21,17 @@
       "country": "PT",
       "administrator": false,
       "active": false
+    },
+    {
+      "id": 3,
+      "name": "Filipe",
+      "email": "filipe@mail.com",
+      "password": "f12345",
+      "address": "rua da base aeria, monte real, Leiria",
+      "postalCode": "2400-999",
+      "country": "PT",
+      "administrator": false,
+      "active": false
     }
   ]
 }

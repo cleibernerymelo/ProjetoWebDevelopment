@@ -137,8 +137,13 @@ function validarLogin(event) {
       })
 
       if (utilizador) {
-        mostrarMensagem('Login efetuado com sucesso!', 'success')
-        limparCampos()
+        if (utilizador.active === true) {
+          mostrarMensagem('Login efetuado com sucesso!', 'success')
+          limparCampos()
+        } else {
+          mostrarMensagem('Conta não activa!', 'error')
+          limparCampos()
+        }
       } else {
         mostrarMensagem('Utilizador inexistente!', 'error')
         limparCampos()
@@ -222,3 +227,33 @@ function fecharInputPesquisa(event) {
     document.removeEventListener('click', fecharInputPesquisa)
   }
 }
+
+// slider automatico
+document.addEventListener('DOMContentLoaded', function () {
+  var slides = document.getElementsByClassName('carousel-item')
+  var currentIndex = 0
+
+  function showSlide(index) {
+    // Remove a classe 'active' de todos os slides
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.remove('active')
+    }
+
+    // Adiciona a classe 'active' ao slide atual
+    slides[index].classList.add('active')
+  }
+
+  function nextSlide() {
+    currentIndex++
+    if (currentIndex === slides.length) {
+      currentIndex = 0
+    }
+    showSlide(currentIndex)
+  }
+
+  // Mostra o primeiro slide
+  showSlide(currentIndex)
+
+  // Inicia a transição automática a cada 5 segundos
+  setInterval(nextSlide, 5000)
+})
