@@ -607,7 +607,114 @@ input {
   cursor: pointer;
 }
 
+/*Cookies Termo de Condições*/
 
+body {
+  overflow: hidden; /* Impede o scroll na página enquanto a mensagem está visível */
+}
+
+.cookie-message {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(245, 245, 245, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookie-message-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.cookie-message-text {
+  color: rgb(170, 170, 170);
+  margin-right: 10px; /* Ajuste a margem à direita */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+.cookie-message-text a {
+  color: #0075be;
+  text-decoration: none;
+}
+
+.cookie-message-text a:hover {
+  text-decoration: underline;
+}
+
+.cookie-message-button {
+  background-color: #f16248;
+  color: #f5f5f5;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-left: 10px; /* Ajuste a margem à esquerda */
+}
+
+.cookie-message-button:hover {
+  background-color: #f5f5f5;
+  color: #f16248;
+  border: 2px solid #f16248;
+}
+
+.cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  pointer-events: auto;
+  background-color: transparent;
+}
+
+/*Slider oferta formativa*/
+.slide-title {
+  font-size: 42px;
+}
+
+.slide-subtitle {
+  font-size: 35px;
+}
+
+.slide1-subtitle {
+  color: #153c85;
+}
+
+.slide-text {
+  font-size: 26px;
+}
+
+#slide1 {
+  color: #f27d29;
+}
+
+#slide2 {
+  color: #153c85;
+}
+
+#slide3 {
+  color: #ebc711;
+}
+
+#slide4 {
+  color: #153c85;
+}
+
+#slide5 {
+  color: #ff701e;
+}
+
+.cookie-message.hide {
+  display: none;
+}
 
 /* .search-container {
   position: relative;
@@ -680,7 +787,6 @@ input {
       height: 320px;
       text-align: center;
       justify-content: center;
-
   }
 
   #banner-article {
@@ -701,16 +807,11 @@ input {
   }
 
 #banner-article .button{
-
     font-size: 15px;
     margin-top: 40px;
     align-items: center;
-
-
   }
-
 }
-
 
 /* Estilos para smartphones icone telefone */
 @media screen and (max-width: 800px) {
@@ -718,7 +819,6 @@ input {
     display: none;
   }
 }
-
 
 /* Seta não aparecer para smartphones*/
 @media (max-width: 800px) {
@@ -777,6 +877,7 @@ input {
   }
 }
 
+
 /*Footer em duas colunas*/
 @media (max-width: 800px) {
   .title-table {
@@ -790,6 +891,60 @@ input {
   }
  }
 
- 
+ /*Cookies*/
+ @media (max-width: 1300px) {
+  body {
+    overflow: hidden;
+  }
 
- 
+  .cookie-message {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cookie-message.show-mobile {
+    display: none;
+  }
+
+  .cookie-message-content {
+    background-color: #f5f5f5;
+    /* border-radius: 10px; */
+    text-align: justify;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 700px;
+    width: 80%;
+    max-height: 30%;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .cookie-message-text {
+    color: rgb(170, 170, 170);
+    font-size: 16px;
+  }
+
+  .cookie-message-text a {
+    color: #0075be;
+  }
+
+  .cookie-message-text a:hover {
+    text-decoration: underline;
+  }
+
+  .cookie-message-button {
+    background-color: #f16248;
+    color: #f5f5f5;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+}

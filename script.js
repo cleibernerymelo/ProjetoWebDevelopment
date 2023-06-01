@@ -257,3 +257,33 @@ document.addEventListener('DOMContentLoaded', function () {
   // Inicia a transição automática a cada 5 segundos
   setInterval(nextSlide, 5000)
 })
+
+// fechar a mensagem de cookies e remover o fundo semi-transparente
+var button = document.querySelector('.cookie-message-button')
+var message = document.querySelector('.cookie-message')
+var overlay = document.createElement('div')
+overlay.classList.add('cookie-overlay')
+
+button.addEventListener('click', function () {
+  message.style.display = 'none'
+  overlay.style.display = 'none'
+  document.body.style.overflow = 'auto' // Restaura a capacidade de fazer scroll na página
+})
+
+document.body.addEventListener('click', function (event) {
+  if (message.style.display !== 'none') {
+    event.stopPropagation()
+  }
+})
+
+// Adiciona a camada overlay acima da página
+document.body.appendChild(overlay)
+
+// Função para responsividade do cookie message
+// var button = document.querySelector('.cookie-message-button')
+// var message = document.querySelector('.cookie-message')
+
+// button.addEventListener('click', function () {
+//   message.classList.remove('show-mobile')
+//   document.body.style.overflow = 'auto'
+// })
