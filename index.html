@@ -51,7 +51,8 @@
         <span class="telefone-texto">919 204 462</span>
       </div>
     </div>
-    <header>
+    <header> 
+      <div>  
       <a href="https://pt.primaverabss.com/pt/">
         <img
           id="header-logotipo"
@@ -64,33 +65,23 @@
         src="imagens/menu.png"
         alt="imagem de um pequeno quadrado com três linhas para menu"
       />
-      <!-- <img
-        class="header-icone"
-        title="Fazer login"
-        src="imagens/login.png"
-        alt="imagem de uma pessoa em um cirulo para login"
-      /> -->
-      <!-- <img
-        class="header-icone"
-        title="Pesquisar"
-        src="imagens/lupa.png"
-        alt="imagem de uma lupa para pesquisa"
-      /> -->
+      
       <i
-        class="fa-solid fa-arrow-right-from-bracket fa-lg header-icone"
+        class="fa-solid fa-arrow-right-from-bracket header-icone"
         id="icone-logout"
       ></i>
-      <i class="fa-solid fa-user fa-lg header-icone" id="icone-perfil"></i>
+      <i class="fa-solid fa-user header-icone" id="icone-perfil"></i>
       <i
         id="login-icon"
-        class="fa-solid fa-arrow-right-to-bracket fa-lg header-icone"
+        class="fa-solid fa-arrow-right-to-bracket header-icone"
       ></i>
-      <i class="fa-solid fa-user-plus fa-lg header-icone" id="icone-record"></i>
+      <i class="fa-solid fa-user-plus header-icone" id="icone-record"></i>
+      <span class="header-nome-utilizador" id="nome-utilizador"></span>
       <i
         id="icone-pesquisa"
-        class="fa-solid fa-magnifying-glass fa-lg header-icone"
+        class="fa-solid fa-magnifying-glass header-icone"
         onclick="exibirInputPesquisa()"
-      >
+      >          
         <input
           id="pesquisa"
           type="text"
@@ -98,9 +89,9 @@
           onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'Pesquisar'"
           style="display: inline-block; vertical-align: middle; display: none"
-        />
-      </i>
-
+        />   
+      </i>    
+    </div>  
       <nav class="header-nav">
         <ul id="header-menu-nav">
           <li class="header-menu-option"><a href="#">Contabilistas</a></li>
@@ -146,6 +137,7 @@
           </div>
         </div>
       </div>
+    </div>
     </header>
     <main>
       <section id="banner">

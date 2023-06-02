@@ -125,6 +125,9 @@ function validarLogin(event) {
   // utilizar o fetch para carregar o arquivo bd.json/utilizadores e verificar se o email e password existem no ficheiro e se estão corretos mas não usar alert e sim o innerHTML para mostrar as mensagens
   fetch('bd.json')
     .then(function (response) {
+      if (!response.ok) {
+        throw new Error('Erro ao carregar o arquivo bd.json')
+      }
       return response.json()
     })
     .then(function (data) {
@@ -140,8 +143,11 @@ function validarLogin(event) {
         if (utilizador.active === true) {
           mostrarMensagem('Login efetuado com sucesso!', 'success')
           limparCampos()
+          // fecharModal()
+          var nomeUtilizador = document.getElementById('nome-utilizador')
+          nomeUtilizador.textContent = 'Bem-vindo(a), ' + utilizador.name
         } else {
-          mostrarMensagem('Conta não activa!', 'error')
+          mostrarMensagem('Conta não ativa!', 'error')
           limparCampos()
         }
       } else {
@@ -150,8 +156,19 @@ function validarLogin(event) {
       }
     })
     .catch(function (error) {
-      console.error('Erro ao carregar o arquivo bd.json:', error)
+      console.error(error)
     })
+}
+
+function capitalizeInitials(str) {
+  var words = str.toLowerCase().split(' ')
+
+  for (var i = 0; i < words.length; i++) {
+    var word = words[i]
+    words[i] = word.charAt(0).toUpperCase() + word.slice(1)
+  }
+
+  return words.join(' ')
 }
 
 function mostrarMensagem(mensagem, tipo) {

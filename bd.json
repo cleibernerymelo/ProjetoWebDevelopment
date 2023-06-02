@@ -2,7 +2,7 @@
   "utilizadores": [
     {
       "id": 1,
-      "name": "Vitoria",
+      "name": "Vitoria Melo",
       "email": "vitoria@mail.com",
       "password": "v12345",
       "address": "Av Herois de Angola, Leiria",
@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "name": "Davi",
+      "name": "Davi Melo",
       "email": "davi@mail.com",
       "password": "d12345",
       "address": "Av Herois de Angola, Leiria",
@@ -24,7 +24,7 @@
     },
     {
       "id": 3,
-      "name": "Filipe",
+      "name": "Filipe Melo",
       "email": "filipe@mail.com",
       "password": "f12345",
       "address": "rua da base aeria, monte real, Leiria",

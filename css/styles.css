@@ -14,7 +14,7 @@ h2 {
 /* Configuração de stylo para o header*/
 header  {
   background-color: #f5f5f5;
-  height: 90px;
+  height: 110px;
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -607,6 +607,39 @@ input {
   cursor: pointer;
 }
 
+/**/
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-nome-utilizador {
+  margin-right: 10px;
+}
+
+.header-pesquisa {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+#icone-pesquisa {
+  cursor: pointer;
+}
+
+#pesquisa {
+  display: none;
+}
+
+#icone-pesquisa:hover + #pesquisa {
+  display: inline-block;
+}
+
+#icone-pesquisa:hover + #pesquisa + .header-nome-utilizador {
+  margin-right: 10px;
+}
+
 /*Cookies Termo de Condições*/
 
 body {
@@ -716,39 +749,11 @@ body {
   display: none;
 }
 
-/* .search-container {
-  position: relative;
-  width: 300px;
+/*Texto boas vindas*/
+.header-nome-utilizador {
+  /* float: right; */
+  margin-left: 730px;
 }
-
-.search-icon {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  background-color: #aaa;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-input {
-  width: 0;
-  height: 30px;
-  border: 0;
-  border-left: 1px solid #aaa;
-  padding-left: 5px;
-  transition: width 0.5s;
-  box-sizing: border-box;
-}
-
-.fa-magnifying-glass:focus {
-  outline: none;
-  font-size: 24px;
-        cursor: pointer;
-} */
-
 
 /*RESPONSIVIDADE DA PAGINA*/
 
