@@ -22,12 +22,17 @@ document
 //Esconder os icones perfil e logout quando a pagina for carregada
 window.addEventListener('DOMContentLoaded', function () {
   var iconeLogout = document.getElementById('icone-logout')
-  var iconePefil = document.getElementById('icone-perfil')
-  var icone3 = document.getElementById('icone3')
+  var iconePerfil = document.getElementById('icone-perfil')
+  var iconeConfig = document.getElementById('icone-config')
 
-  iconeLogout.parentNode.removeChild(iconeLogout)
-  iconePefil.parentNode.removeChild(iconePefil)
-  icone3.parentNode.removeChild(icone3)
+  iconeLogout.style.display = 'none'
+  iconePerfil.style.display = 'none'
+  iconeConfig.style.display = 'none'
+
+  iconeLogout.addEventListener('click', logout)
+
+  // iconeLogout.parentNode.removeChild(iconeLogout)
+  // iconePefil.parentNode.removeChild(iconePefil)
 })
 
 //Validação do formulario de login
@@ -53,7 +58,10 @@ window.onload = function () {
   }
 
   window.onclick = function (event) {
-    if (event.target == modal) {
+    if (
+      event.target === modal ||
+      event.target.getAttribute('data-modal') === 'login-modal'
+    ) {
       modal.style.display = 'none'
     }
   }
@@ -66,6 +74,9 @@ window.onload = function () {
     console.log('Password: ' + password)
     loginForm.reset()
   }
+
+  var iconeLogout = document.getElementById('icone-logout')
+  iconeLogout.onclick = logout
 }
 
 function validateEmail(email) {
@@ -143,9 +154,65 @@ function validarLogin(event) {
         if (utilizador.active === true) {
           mostrarMensagem('Login efetuado com sucesso!', 'success')
           limparCampos()
-          // fecharModal()
           var nomeUtilizador = document.getElementById('nome-utilizador')
           nomeUtilizador.textContent = 'Bem-vindo(a), ' + utilizador.name
+
+          // Armazenar os dados de login na sessionStorage
+          sessionStorage.setItem('isLoggedIn', true)
+          sessionStorage.setItem('id', utilizador.id)
+          sessionStorage.setItem('nomeUtilizador', utilizador.name)
+
+          // Fechar a modal
+          var modal = document.getElementById('login-modal')
+          var body = document.body
+          modal.style.display = 'none'
+          body.classList.remove('modal-open')
+          body.style.overflow = 'auto'
+
+          // Mostrar os icones perfil e logout
+          var iconeLogin = document.getElementById('login-icon')
+          var iconeRecord = document.getElementById('icone-record')
+          iconeLogin.style.display = 'none'
+          iconeRecord.style.display = 'none'
+
+          var iconeLogout = document.getElementById('icone-logout')
+          var iconePerfil = document.getElementById('icone-perfil')
+
+          iconeLogout.style.display = 'block'
+          iconePerfil.style.display = 'block'
+        }
+        if (utilizador.active === true && utilizador.administrator === true) {
+          mostrarMensagem('Login efetuado com sucesso!', 'success')
+          limparCampos()
+          var nomeUtilizador = document.getElementById('nome-utilizador')
+          nomeUtilizador.textContent = 'Bem-vindo(a), ' + utilizador.name
+
+          // Armazenar os dados de login na sessionStorage
+          sessionStorage.setItem('isLoggedIn', true)
+          sessionStorage.setItem('nomeUtilizador', utilizador.name)
+
+          // Fechar a modal
+          var modal = document.getElementById('login-modal')
+          var body = document.body
+          modal.style.display = 'none'
+          body.classList.remove('modal-open')
+          body.style.overflow = 'auto'
+
+          // Mostrar os icones perfil e logout
+          var iconeLogin = document.getElementById('login-icon')
+          var iconeRecord = document.getElementById('icone-record')
+          var iconeSearch = document.getElementById('icone-pesquisa')
+          iconeLogin.style.display = 'none'
+          iconeRecord.style.display = 'none'
+          iconeSearch.style.display = 'none'
+
+          var iconeLogout = document.getElementById('icone-logout')
+          var iconePerfil = document.getElementById('icone-perfil')
+          var iconeConfig = document.getElementById('icone-config')
+
+          iconeLogout.style.display = 'block'
+          iconePerfil.style.display = 'block'
+          iconeConfig.style.display = 'block'
         } else {
           mostrarMensagem('Conta não ativa!', 'error')
           limparCampos()
@@ -160,15 +227,27 @@ function validarLogin(event) {
     })
 }
 
-function capitalizeInitials(str) {
-  var words = str.toLowerCase().split(' ')
+function logout() {
+  sessionStorage.clear()
+  var nomeUtilizador = document.getElementById('nome-utilizador')
+  nomeUtilizador.textContent = ''
 
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i]
-    words[i] = word.charAt(0).toUpperCase() + word.slice(1)
-  }
+  var iconeLogout = document.getElementById('icone-logout')
+  var iconePerfil = document.getElementById('icone-perfil')
+  var iconeConfig = document.getElementById('icone-config')
 
-  return words.join(' ')
+  iconeLogout.style.display = 'none'
+  iconePerfil.style.display = 'none'
+  iconeConfig.style.display = 'none'
+
+  var iconeLogin = document.getElementById('login-icon')
+  var iconeRecord = document.getElementById('icone-record')
+  var iconeSearch = document.getElementById('icone-pesquisa')
+  iconeLogin.style.display = 'block'
+  iconeRecord.style.display = 'block'
+  iconeSearch.style.display = 'block'
+  iconeRecord.title = 'Registo'
+  iconeLogin.title = 'Login'
 }
 
 function mostrarMensagem(mensagem, tipo) {
@@ -296,11 +375,20 @@ document.body.addEventListener('click', function (event) {
 // Adiciona a camada overlay acima da página
 document.body.appendChild(overlay)
 
-// Função para responsividade do cookie message
-// var button = document.querySelector('.cookie-message-button')
-// var message = document.querySelector('.cookie-message')
+//Ao clicar no icone record id=icone-record redirecinar para a pagina newUser.html
+var iconeRecord = document.getElementById('icone-record')
+iconeRecord.addEventListener('click', function () {
+  window.location.href = 'newUser.html'
+})
 
-// button.addEventListener('click', function () {
-//   message.classList.remove('show-mobile')
-//   document.body.style.overflow = 'auto'
-// })
+// Ao clicar no icone config icone-config redirecionar para a pagina admin_utilizadores.html
+var iconeConfig = document.getElementById('icone-config')
+iconeConfig.addEventListener('click', function () {
+  window.location.href = 'admin_utilizadores.html'
+})
+
+// Ao clicar no icone perfil icone-perfil redirecionar para a pagina editUser.html
+var iconePerfil = document.getElementById('icone-perfil')
+iconePerfil.addEventListener('click', function () {
+  window.location.href = 'editUser.html'
+})

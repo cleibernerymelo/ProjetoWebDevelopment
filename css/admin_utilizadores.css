@@ -1,0 +1,121 @@
+body {
+  font-family: "Roboto", sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Configuração de stylo para o header*/
+
+header  {
+  background-color: #f5f5f5;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+#header-logotipo  {
+  padding-left:20px;
+  margin-bottom: 20px;
+}
+
+.header-icone {
+  padding-right: 10px;
+  margin-right: 10px;
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  font-size: 20px;
+}
+
+/*Configurando css para o footer*/
+
+#footer {
+  background-color : #ebebeb; 
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+table {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+footer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+footer table th {
+  text-align: left;
+  padding-bottom: 30px;
+}
+
+footer td a {
+  text-decoration: none;
+  color: #7d7d7d;
+}
+
+footer td a:hover {
+  text-decoration: underline;
+}
+
+td {
+  padding-bottom: 10px;
+}
+
+.title-table {
+  font-weight: bold;
+  color: #252525;
+}
+
+/* Configuração da tabela que mostrará os utilizadores*/
+/* ========================= */
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#utilizadores-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+#utilizadores-table th,
+#utilizadores-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+#utilizadores-table th {
+  background-color: #f2f2f2;
+}
+
+#utilizadores-table .stripedrows tbody tr:nth-child(odd) {
+  background-color: #eaf2f8;
+}
+
+/* titulo na pagina*/
+
+#title-page {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+/* tirar o sublinhado do nome do utilizador*/
+#nome-usuario {
+  margin-left: 1130px !important;
+}
+
+   /*Icone logout */ 
+   .fa-arrow-right-from-bracket {
+    font-size: 24px;
+    cursor: pointer;
+  }

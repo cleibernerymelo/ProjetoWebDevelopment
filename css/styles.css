@@ -40,6 +40,7 @@ header .header-nav {
   display: inline-block;
   vertical-align: middle;
   float: right;
+  font-size: 20px;
 }
 
 .header-nav {
@@ -405,7 +406,7 @@ td {
   color: #252525;
 }
 
-/*Configurando o telefone no lado direito da patgina */
+/*Configurando o telefone no lado direito da pagina */
 
 .telefone-container {
   position: fixed;
@@ -564,6 +565,26 @@ input {
 }
 
 .fa-arrow-right-to-bracket {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-arrow-right-from-bracket {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-user {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-user-plus {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.fa-cog {
   font-size: 24px;
   cursor: pointer;
 }
@@ -752,8 +773,9 @@ body {
 /*Texto boas vindas*/
 .header-nome-utilizador {
   /* float: right; */
-  margin-left: 730px;
+  margin-left: 700px;
 }
+
 
 /*RESPONSIVIDADE DA PAGINA*/
 
@@ -953,3 +975,4 @@ body {
     margin-top: 10px;
   }
 }
+

@@ -65,21 +65,25 @@
         src="imagens/menu.png"
         alt="imagem de um pequeno quadrado com três linhas para menu"
       />
-      
+     
       <i
         class="fa-solid fa-arrow-right-from-bracket header-icone"
         id="icone-logout"
+        title="Logout"
       ></i>
-      <i class="fa-solid fa-user header-icone" id="icone-perfil"></i>
+      <i class="fa-solid fa-user header-icone" id="icone-perfil" title="Perfil"></i>
       <i
         id="login-icon"
+        title="Login"
         class="fa-solid fa-arrow-right-to-bracket header-icone"
       ></i>
-      <i class="fa-solid fa-user-plus header-icone" id="icone-record"></i>
+      <i class="fa-solid fa-user-plus header-icone" id="icone-record" title="Record"></i>
+      <i class="fas fa-cog header-icone" id="icone-config" title="Settings"></i>
       <span class="header-nome-utilizador" id="nome-utilizador"></span>
       <i
         id="icone-pesquisa"
         class="fa-solid fa-magnifying-glass header-icone"
+        title="Search"
         onclick="exibirInputPesquisa()"
       >          
         <input
@@ -90,9 +94,10 @@
           onblur="this.placeholder = 'Pesquisar'"
           style="display: inline-block; vertical-align: middle; display: none"
         />   
-      </i>    
+      </i> 
+      <i></i>   
     </div>  
-      <nav class="header-nav">
+      <nav class="header-nav" id="menuPrincipal">
         <ul id="header-menu-nav">
           <li class="header-menu-option"><a href="#">Contabilistas</a></li>
           <li class="header-menu-option"><a href="#">Setor Privado</a></li>
@@ -105,7 +110,7 @@
 
       <!-- Modal de login -->
       <div class="login-container">
-        <div id="login-modal" class="modal">
+        <div id="login-modal" class="modal" data-modal="login-modal">
           <div class="modal-content">
             <span class="close" id="fechar-modal-button">&times;</span>
             <h4 id="title-login-form">Controlo de Acesso</h4>
@@ -156,6 +161,7 @@
         </article>
         <img
           class="imagem"
+          id="computador"
           src="imagens/computador.png"
           alt="computador portatil"
         />

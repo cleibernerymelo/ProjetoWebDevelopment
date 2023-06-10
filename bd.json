@@ -12,27 +12,52 @@
       "active": true
     },
     {
-      "id": 2,
       "name": "Davi Melo",
       "email": "davi@mail.com",
-      "password": "d12345",
-      "address": "Av Herois de Angola, Leiria",
-      "postalCode": "2400-123",
-      "country": "PT",
+      "password": "Portug@1",
+      "confirmPassword": "Portug@1",
+      "address": "leiria",
+      "postalCode": "1234-123",
+      "country": "AO",
       "administrator": false,
-      "active": false
+      "active": true,
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Filipe Melo",
       "email": "filipe@mail.com",
-      "password": "f12345",
-      "address": "rua da base aeria, monte real, Leiria",
-      "postalCode": "2400-999",
+      "password": "Portug@12345",
+      "confirmPassword": "Portug@12345",
+      "address": "leiria",
+      "postalCode": "1234-123",
       "country": "PT",
       "administrator": false,
-      "active": false
+      "active": false,
+      "id": 3
+    },
+    {
+      "name": "gustavo",
+      "email": "gustavo@mail.com",
+      "password": "Gust@vo1",
+      "confirmPassword": "Gust@vo1",
+      "address": "braga",
+      "postalCode": "1234-123",
+      "country": "IT",
+      "administrator": false,
+      "active": false,
+      "id": 4
+    },
+    {
+      "name": "Pedro Romoaldo",
+      "email": "pr@mail.com",
+      "password": "Portug@1",
+      "confirmPassword": "Portug@1",
+      "address": "Ermesinde",
+      "postalCode": "1234-123",
+      "country": "PT",
+      "administrator": true,
+      "active": true,
+      "id": 4
     }
   ]
 }
-
